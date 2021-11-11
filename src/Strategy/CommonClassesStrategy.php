@@ -75,14 +75,14 @@ final class CommonClassesStrategy implements DiscoveryStrategy
             ['class' => SlimUriFactory::class, 'condition' => [SlimRequest::class, SlimUriFactory::class]],
         ],
         HttpAsyncClient::class => [
-            ['class' => SymfonyHttplug::class, 'condition' => [SymfonyHttplug::class, Promise::class, RequestFactory::class, [self::class, 'isPsr17FactoryInstalled']]],
+            ['class' => SymfonyHttplug::class, 'condition' => [SymfonyHttplug::class, HttpClient::class, Promise::class, RequestFactory::class, [self::class, 'isPsr17FactoryInstalled']]],
             ['class' => Guzzle7::class, 'condition' => Guzzle7::class],
             ['class' => Guzzle6::class, 'condition' => Guzzle6::class],
             ['class' => Curl::class, 'condition' => Curl::class],
             ['class' => React::class, 'condition' => React::class],
         ],
         HttpClient::class => [
-            ['class' => SymfonyHttplug::class, 'condition' => [SymfonyHttplug::class, RequestFactory::class, [self::class, 'isPsr17FactoryInstalled']]],
+            ['class' => SymfonyHttplug::class, 'condition' => [SymfonyHttplug::class, HttpClient::class, RequestFactory::class, [self::class, 'isPsr17FactoryInstalled']]],
             ['class' => Guzzle7::class, 'condition' => Guzzle7::class],
             ['class' => Guzzle6::class, 'condition' => Guzzle6::class],
             ['class' => Guzzle5::class, 'condition' => Guzzle5::class],
